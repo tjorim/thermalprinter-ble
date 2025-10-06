@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:compileSdkVersion="35" android:compileSdkVersionCodename="15" package="com.dingdang.newprint" platformBuildVersionCode="35" platformBuildVersionName="15">
+    <queries>
+        <package android:name="com.whatsapp"/>
+        <package android:name="com.google.android.gm"/>
+        <intent>
+            <action android:name="android.media.action.IMAGE_CAPTURE"/>
+        </intent>
+        <intent>
+            <action android:name="android.speech.RecognitionService"/>
+        </intent>
+    </queries>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN" android:usesPermissionFlags="neverForLocation"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC"/>
+    <uses-permission android:name="android.permission.ACCESS_ADSERVICES_ATTRIBUTION"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE"/>
+    <uses-feature android:name="android.hardware.bluetooth_le" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera" android:required="false"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE"/>
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID"/>
+    <uses-permission android:name="android.permission.ACCESS_ADSERVICES_AD_ID"/>
+    <permission android:name="com.dingdang.newprint.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.dingdang.newprint.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <application android:allowBackup="true" android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:dataExtractionRules="@xml/data_extraction_rules" android:extractNativeLibs="false" android:fullBackupContent="@xml/backup_rules" android:icon="@mipmap/ic_launcher" android:label="@string/app_name" android:name="com.dingdang.newprint.base.App" android:networkSecurityConfig="@xml/network_security_config" android:requestLegacyExternalStorage="true" android:roundIcon="@mipmap/ic_launcher" android:supportsRtl="false" android:theme="@style/Theme.PrinterPro" android:usesCleartextTraffic="true">
+        <meta-data android:name="google_analytics_automatic_screen_reporting_enabled" android:value="true"/>
+        <provider android:authorities="com.dingdang.newprint.fileprovider" android:exported="false" android:grantUriPermissions="true" android:name="androidx.core.content.FileProvider">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/provider_paths"/>
+        </provider>
+        <activity android:exported="true" android:name="com.dingdang.newprint.WelcomeActivity" android:screenOrientation="portrait" android:theme="@style/Theme.DingDangPro.Splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:launchMode="singleTask" android:name="com.dingdang.newprint.home.HomeActivity" android:screenOrientation="portrait"/>
+        <activity android:exported="true" android:name="com.dingdang.newprint.device.DeviceListActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.language.LanguageActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.device.DeviceInfoActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.editor.EditorSizeActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.editor.EditorActivity" android:screenOrientation="portrait" android:windowSoftInputMode="stateAlwaysHidden|adjustResize"/>
+        <activity android:name="com.dingdang.newprint.sticker.StickerActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.image.FreeCropActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.image.ImageHomeActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.print.PrintActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.image.LocalFileListActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.camera.TakePhotosActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.camera.CaptureScanActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.image.ImagePreViewActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.editor.EditortListActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.web.WebBrowserActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.web.WebHomeActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.text.TextEditorActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.text.TextListActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.text.BannerTextActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.text.BannerTextListActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.template.TemplateHomeActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.template.DecorativeEditActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.template.StickNoteEditActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.template.ToDoListEditActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.operation.GuideOperationPlayActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.setting.AboutUSActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.setting.SettingActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.web.WebViewActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.material.MaterialDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="true" android:label="@string/app_name" android:launchMode="singleTask" android:name="com.dingdang.newprint.document.FileHomeActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="file"/>
+                <data android:scheme="content"/>
+                <data android:mimeType="*/*"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="true" android:label="@string/app_name" android:launchMode="singleTask" android:name="com.dingdang.newprint.document.ImageIntentFilterActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.SEND"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="image/*"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.dingdang.newprint.document.DocumentPreviewActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.image.A4ScanHomeActivity" android:screenOrientation="portrait"/>
+        <activity android:launchMode="singleTask" android:name="com.dingdang.newprint.camera.A4ScanTakePhotosActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.image.A4ScanEditActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.image.A4ScanFixActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.export.SelectToExportActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.export.ExportImageToPdfActivity" android:screenOrientation="portrait"/>
+        <activity android:launchMode="singleTask" android:name="com.dingdang.newprint.camera.TakePhotosTypeActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.image.TakeCertPhotoActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.image.A4ImageTemplateActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.image.A4ImagePrintMenuActivity" android:screenOrientation="portrait"/>
+        <activity android:launchMode="singleTask" android:name="com.dingdang.newprint.editor.LabelEditorActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name="com.dingdang.newprint.editor.LabelEditorSizeActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.camera.ScanCodeActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.print.PrintLabelActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.font.FontManagerActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.title.TitleListActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.print.PrintTitleActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.profile.LoginActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.profile.ProfileInfoActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.profile.ProfileDeleteActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.profile.ProfileEmailActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.label.LabelCloudRecordActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.label.FolderListActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.label.LabelTemplateHomeActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.label.LabelTemplateSearchActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.droid.common.easypermissions.AppSettingsDialogHolderActivity" android:screenOrientation="portrait" android:theme="@style/CustomAlertDialogStyle"/>
+        <activity android:name="com.dingdang.newprint.image.FreeCropNewActivity" android:screenOrientation="portrait"/>
+        <activity android:launchMode="singleTask" android:name="com.dingdang.newprint.shippingpdf.ShippingPdfActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.shippingpdf.PdfEditActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.shippingpdf.CropPdfPrintActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.document.AddDocuments" android:screenOrientation="portrait"/>
+        <service android:foregroundServiceType="dataSync" android:name="com.dingdang.newprint.service.ParseDocumentService"/>
+        <service android:foregroundServiceType="connectedDevice" android:name="com.dingdang.newprint.service.PrinterForegroundService"/>
+        <activity android:name="com.dingdang.newprint.tattoo.TattooEditorDataRecordActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.tattoo.TattooLocalFolderListActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.tattoo.TattooEditLabelNewActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.tattoo.TattooEditorSizeActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.tattoo.TattooSegmentationActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.tattoo.TattooPrintNewActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.tattoo.TattooFreeCropActivityNew" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.test.TestActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.tinylabel.TinyLabelEditActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name="com.dingdang.newprint.userguide.UserGuideActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.setting.AboutUsActivityWT" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.tinylabel.TinyLabelTemplateActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.tinylabel.TinyLabelEditSizeActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.tinylabel.TinyLabelPrintActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.setting.AboutUSActivitySYZ" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.profile.LoginPhoneActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.profile.ProfilePhoneActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.tattoo.TattooMenuActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.tattoo.TattooMaterialListActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.device.PrinterCategoryActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.templateprint.TimeStyleTemplatePrintActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.portraitanime.PortraitAnimeListActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.portraitanime.CreatePortraitAnimeActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.portraitanime.PortraitAnimeResultActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.profile.LoginNewActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.tattoo.TattooGraffitiToImgActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.tattoo.TattooGraffitiImgActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.editor.CableLabelEditorActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.exampaper.PaperRestorationListActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.exampaper.PaperRestorationActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.exampaper.PaperReconstructionActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.tinylabel.ContinuousLabelEditActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name="com.dingdang.newprint.tinylabel.TinyLabelRecordsActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.print.PrintContinuousLabelActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.setting.AboutUSOfCustomerActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.exampaper.AiAssistantActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.exampaper.AiAssistantRecordActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.exampaper.AiAssistantRecordDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dingdang.newprint.exampaper.PaperRecognitionActivity" android:screenOrientation="portrait"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <meta-data android:name="com.google.mlkit.vision.DEPENDENCIES" android:value="ocr"/>
+        <provider android:authorities="com.dingdang.newprint.luckProvider" android:exported="false" android:grantUriPermissions="true" android:name="com.luck.picture.lib.basic.PictureFileProvider">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/ps_file_paths"/>
+        </provider>
+        <service android:enabled="true" android:foregroundServiceType="location" android:name="com.luck.picture.lib.service.ForegroundService"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.luck.picture.lib.basic.PictureSelectorSupporterActivity" android:theme="@style/Base.Theme.NoActionBar"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.luck.picture.lib.basic.PictureSelectorTransparentActivity" android:theme="@style/Picture.Theme.Translucent"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.yalantis.ucrop.UCropActivity" android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.yalantis.ucrop.UCropMultipleActivity" android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <service android:directBootAware="true" android:exported="false" android:name="com.google.mlkit.common.internal.MlKitComponentDiscoveryService">
+            <meta-data android:name="com.google.firebase.components:com.google.mlkit.vision.text.internal.TextRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.mlkit.vision.common.internal.VisionCommonRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.mlkit.common.internal.CommonComponentRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+        </service>
+        <provider android:authorities="com.dingdang.newprint.mlkitinitprovider" android:exported="false" android:initOrder="99" android:name="com.google.mlkit.common.internal.MlKitInitProvider"/>
+        <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <receiver android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementReceiver"/>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementService"/>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementJobService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <property android:name="android.adservices.AD_SERVICES_CONFIG" android:resource="@xml/ga_ad_services_config"/>
+        <service android:directBootAware="true" android:exported="false" android:name="com.google.firebase.components.ComponentDiscoveryService">
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsKtxRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonLegacyRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.FirebaseCommonKtxRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+        </service>
+        <provider android:authorities="com.dingdang.newprint.firebaseinitprovider" android:directBootAware="true" android:exported="false" android:initOrder="100" android:name="com.google.firebase.provider.FirebaseInitProvider"/>
+        <uses-library android:name="android.ext.adservices" android:required="false"/>
+        <provider android:authorities="com.dingdang.newprint.androidx-startup" android:exported="false" android:name="androidx.startup.InitializationProvider">
+            <meta-data android:name="androidx.emoji2.text.EmojiCompatInitializer" android:value="androidx.startup"/>
+            <meta-data android:name="androidx.lifecycle.ProcessLifecycleInitializer" android:value="androidx.startup"/>
+            <meta-data android:name="androidx.profileinstaller.ProfileInstallerInitializer" android:value="androidx.startup"/>
+        </provider>
+        <service android:directBootAware="true" android:exported="false" android:name="androidx.room.MultiInstanceInvalidationService"/>
+        <receiver android:directBootAware="false" android:enabled="true" android:exported="true" android:name="androidx.profileinstaller.ProfileInstallReceiver" android:permission="android.permission.DUMP">
+            <intent-filter>
+                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="androidx.profileinstaller.action.SKIP_FILE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION"/>
+            </intent-filter>
+        </receiver>
+        <service android:exported="false" android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery">
+            <meta-data android:name="backend:com.google.android.datatransport.cct.CctBackendFactory" android:value="cct"/>
+        </service>
+        <service android:exported="false" android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <receiver android:exported="false" android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"/>
+        <provider android:authorities="com.dingdang.newprint.jlatexmathinitprovider" android:exported="false" android:name="ru.noties.jlatexmath.JLatexMathInitProvider"/>
+    </application>
+</manifest>
